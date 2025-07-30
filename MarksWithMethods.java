@@ -15,10 +15,11 @@ public class MarksWithMethods{
 		    System.out.println("3. Get the Average for a subject");
 		    System.out.println("4. Get the Average for a student");
 		    System.out.println("5. Get the total marks of a student");
-		    System.out.println("6. Exit");
+		    System.out.println("6. Show Grades");
+		    System.out.println("7. Exit");
 		    System.out.printf("\tChoose the option: ");
 		    int res = sc.nextInt(); sc.nextLine();
-		    if (res == 6){
+		    if (res == 7){
                 break;
             }  
             else if (res == 1) {
@@ -50,6 +51,13 @@ public class MarksWithMethods{
                 System.out.print("Enter the ID of the student: ");
 				int studentID = sc.nextInt(); sc.nextLine();
                 System.out.println("Total of the student " + (studentID) + " is " + total(studentID - 1));
+            } else if (res == 6) {
+                for (int i = 0; i < n; i++) {
+					System.out.println("Grades of Student " + (i + 1));
+                    for (int j = 0; j < 3; j++) {
+                        System.out.printf("\t" + selectSubject(j) + ": " + grades(mark[i][j]) + "\n");
+                    }
+                }
             } else {
                 continue;
             }
@@ -102,6 +110,22 @@ public class MarksWithMethods{
 		else if (subjectID == 2) subject = "Mathematics";
         else subject = "Unknown";
         return subject;
+    }
+
+    public static String grades(int marks){
+        if (marks >= 90) {
+			return "Grade A";
+		} else if(marks >= 80) {
+			return "Grade B";
+		} else if(marks >= 70) {
+			return "Grade C";
+		} else if(marks >= 60) {
+			return "Grade D";
+		} else if(marks >= 0) {
+			return "Fail";
+		} else {
+            return "Invalid Marks";
+        }
     }
 }
 
