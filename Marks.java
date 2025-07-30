@@ -11,10 +11,11 @@ public class Marks{
 		System.out.println("3. Get the Average for a subject");
 		System.out.println("4. Get the Average for a student");
 		System.out.println("5. Get the total marks of a student");
-		System.out.println("6. Exit");
+		System.out.println("6. Show Grades");
+		System.out.println("7. Exit");
 		System.out.printf("\tChoose the option: ");
 		int res = sc.nextInt(); sc.nextLine();
-		if (res == 6)  break;
+		if (res == 7)  break;
 		switch(res) {
 			case 1: {
 				for (int i = 0; i < n; i++) {
@@ -80,6 +81,24 @@ public class Marks{
                                 int total = mark[studentID - 1][0] + mark[studentID - 1][1] + mark[studentID - 1][2];
                                 System.out.println("Total is " + total);
 				break;
+			}
+			case 6: {
+				for (int i = 0; i < n; i++) {
+					System.out.println("Grade of Student " + (i + 1));
+					for (int subject : mark[i]) {
+						if (subject >= 90) {
+							System.out.printf("\tGrade A\n");
+						} else if(subject >= 80) {
+							System.out.printf("\tGrade B\n");
+						} else if(subject >= 70) {
+							System.out.printf("\tGrade C\n");
+						} else if(subject >= 60) {
+							System.out.printf("\tGrade D\n");
+						} else if(subject >= 0) {
+							System.out.printf("\tFail\n");
+						}
+					}
+				}
 			}
 			default:{
 				break;
