@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Marks{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ENter the value of n: );
+		System.out.print("Enter the value of n: );
 		int n = sc.nextInt();	sc.nextLine();
 		int [][]mark = new int[n][3];
 		System.out.println("1. Add Student Marks");
@@ -40,17 +40,27 @@ public class Marks{
 					System.out.print("Enter 1 to update another mark: ");
 					check = sc.nextInt(); sc.nextLine();
 				} while (check == 1); 
-					break;
-			case 3:
-				 System.out.print("Enter the subject ID ");
-                                 System.out.printf("\t1. Chemistry\n");
-                                 System.out.printf("\t2. Physics\n");
-                                 System.out.printf("\t3. Mathematic\n");
-                                 int subjectID = sc.nextInt(); sc.nextLine();
-					for (int i = 0; i > n; i++) {
-						total += mark[i][subjectID];
 				break;
-			case 4: 
+			case 3:
+				System.out.print("Enter the subject ID ");
+                                System.out.printf("\t1. Chemistry\n");
+                                System.out.printf("\t2. Physics\n");
+                                System.out.printf("\t3. Mathematic\n");
+                                int subjectID = sc.nextInt(); sc.nextLine();
+				for (int i = 0; i > n; i++) {
+					total += mark[i][subjectID];
+				}
+				float avg = total / n;
+				String subject;
+				if (subjectID == 1) subject = "Chemistry");
+                                if (subjectID == 2) subject = "Physics");
+                                if (subjectID == 3) subject = "Mathematics");
+                                System.out.println("Average of	" + subject + " is " + avg);
+				break;
+			case 4:
+				System.out.print("Enter the ID of the student: ");
+				int studentID = sc.nextInt(); sc.nextLine();
+				
 				break;
 			case 5: 
 				break;
