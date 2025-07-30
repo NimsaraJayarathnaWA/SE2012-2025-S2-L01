@@ -58,7 +58,7 @@ public class Marks{
 				for (int i = 0; i < n; i++) {
 					total += mark[i][subjectID - 1];
 				}
-				float avg = total / n;
+				float avg = (float)total / n;
 				String subject = "";
 				if (subjectID == 1) subject = "Chemistry";
 				else if (subjectID == 2) subject = "Physics";
@@ -70,7 +70,7 @@ public class Marks{
 				System.out.print("Enter the ID of the student: ");
 				int studentID = sc.nextInt(); sc.nextLine();
 				int total = mark[studentID - 1][0] + mark[studentID - 1][1] + mark[studentID - 1][2];
-				float avg = total / 3;
+				float avg = (float)total / 3;
 				System.out.println("Average is " + avg);
 				break;
 			}
